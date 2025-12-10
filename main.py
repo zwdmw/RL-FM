@@ -66,9 +66,9 @@ def main():
                 url = base_url + filename
                 _download_file(url, filepath, verbose=True)
     dataset_root = os.path.join('C:', os.sep, 'code', 'dataset')
-    model_dir = os.path.join('C:', os.sep, 'code', 'saved_models')
-   
     dataset_name = 'MUUFL'#（HS,MUUFL）
+    model_subdir = 'MU' if dataset_name == 'MUUFL' else 'HS'
+    model_dir = os.path.join('C:', os.sep, 'code', 'models', model_subdir)
     data_base_url = 'https://github.com/zwdmw/RL-FM1/releases/download/model_MU/' if dataset_name == 'MUUFL' else 'https://github.com/zwdmw/RL-FM1/releases/download/model/'
     model_base_url = 'https://github.com/zwdmw/RL-FM1/releases/download/model_MU/' if dataset_name == 'MUUFL' else 'https://github.com/zwdmw/RL-FM1/releases/download/model/'
     norm_type = 'scale'
