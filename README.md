@@ -127,7 +127,7 @@ pip install -r requirements.txt
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| **Python** | 3.7+ | Programming language |
+| **Python** | 3.12 | Programming language |
 | **PyTorch** | 1.10+ | Deep learning framework |
 | **NumPy** | Latest | Numerical computing |
 | **scikit-learn** | Latest | Machine learning utilities |
