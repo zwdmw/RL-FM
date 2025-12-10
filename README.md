@@ -1,10 +1,55 @@
 # RL-FM: Reinforcement Learning-Driven Flow Matching for Multi-Modal Remote Sensing Image Classification
 
-This repository contains the official implementation of the paper **"RL-FM: Reinforcement Learning-Driven Flow Matching for Multi-Modal Remote Sensing Image Classification"**.
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)
+![PyTorch](https://img.shields.io/badge/PyTorch-1.10+-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+**Official implementation of the RL-FM paper for multi-modal remote sensing image classification**
+
+[Dataset Setup](#dataset-setup) • [Installation](#installation) • [Usage](#usage) • [Citation](#citation)
+
+</div>
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Dataset Setup](#dataset-setup)
+  - [Dataset Directory Structure](#dataset-directory-structure)
+  - [Dataset Requirements](#dataset-requirements)
+  - [Dataset Path Configuration](#dataset-path-configuration)
+  - [Dataset Selection](#dataset-selection)
+- [Installation](#installation)
+  - [Requirements](#requirements)
+  - [Key Dependencies](#key-dependencies)
+- [Usage](#usage)
+  - [Basic Usage](#basic-usage)
+  - [Output](#output)
+- [Project Structure](#project-structure)
+- [Citation](#citation)
+- [License](#license)
+- [Contact](#contact)
+
+---
 
 ## Overview
 
-RL-FM is a reinforcement learning-based approach for multi-modal remote sensing image classification, which combines Hyperspectral Imaging (HSI) and LiDAR data for improved classification performance. The method uses reinforcement learning to optimize the fusion of multi-modal features through flow matching techniques.
+RL-FM is a reinforcement learning-based approach for multi-modal remote sensing image classification, which combines **Hyperspectral Imaging (HSI)** and **LiDAR** data for improved classification performance. The method uses reinforcement learning to optimize the fusion of multi-modal features through flow matching techniques.
+
+---
+
+## Features
+
+- ✅ **Multi-modal Fusion**: Seamlessly combines HSI and LiDAR data
+- ✅ **Reinforcement Learning**: Uses PPO (Proximal Policy Optimization) for optimal feature fusion
+- ✅ **Flow Matching**: Advanced flow matching techniques for feature alignment
+- ✅ **Multiple Datasets**: Supports Houston (HS) and MUUFL datasets
+- ✅ **Auto Download**: Automatic dataset and model download on first run
+- ✅ **Easy Configuration**: Simple configuration via `main.py`
 
 ---
 
@@ -32,15 +77,19 @@ Place your datasets in the following directory structure:
 
 #### Houston (HS) Dataset
 
-- `Houston.mat`: HSI data with shape (H, W, B)
-- `Houston_LR.mat`: LiDAR data with shape (H, W, 1)
-- `Houston_gt.mat`: Ground truth labels with shape (H, W)
+| File | Description | Shape |
+|------|-------------|-------|
+| `Houston.mat` | HSI data | (H, W, B) |
+| `Houston_LR.mat` | LiDAR data | (H, W, 1) |
+| `Houston_gt.mat` | Ground truth labels | (H, W) |
 
 #### MUUFL Dataset
 
-- `MUF_HSI.mat`: HSI data with shape (H, W, B)
-- `MUF_LiDAR.mat`: LiDAR data with shape (H, W, 1)
-- `MUF_gt.mat`: Ground truth labels with shape (H, W)
+| File | Description | Shape |
+|------|-------------|-------|
+| `MUF_HSI.mat` | HSI data | (H, W, B) |
+| `MUF_LiDAR.mat` | LiDAR data | (H, W, 1) |
+| `MUF_gt.mat` | Ground truth labels | (H, W) |
 
 > All files should be in MATLAB `.mat` format.
 
@@ -76,11 +125,13 @@ pip install -r requirements.txt
 
 ### Key Dependencies
 
-- **Python** 3.7+
-- **PyTorch** 1.10+
-- **NumPy**
-- **scikit-learn**
-- **SciPy**
+| Package | Version | Description |
+|---------|---------|-------------|
+| **Python** | 3.7+ | Programming language |
+| **PyTorch** | 1.10+ | Deep learning framework |
+| **NumPy** | Latest | Numerical computing |
+| **scikit-learn** | Latest | Machine learning utilities |
+| **SciPy** | Latest | Scientific computing |
 
 ---
 
@@ -96,19 +147,21 @@ python main.py
 
 The code will automatically:
 
-1. Load the dataset from the configured path
-2. Process and extract features from HSI and LiDAR data
-3. Train the reinforcement learning policy for feature fusion
-4. Perform classification and output evaluation metrics
+1. **Load** the dataset from the configured path
+2. **Process** and extract features from HSI and LiDAR data
+3. **Train** the reinforcement learning policy for feature fusion
+4. **Perform** classification and output evaluation metrics
 
 ### Output
 
 The script will output classification metrics including:
 
-- **Overall Accuracy (OA)**
-- **Average Accuracy (AA)**
-- **Kappa coefficient**
-- **Class-wise accuracy**
+| Metric | Description |
+|--------|-------------|
+| **Overall Accuracy (OA)** | Overall classification accuracy |
+| **Average Accuracy (AA)** | Average per-class accuracy |
+| **Kappa coefficient** | Cohen's kappa coefficient |
+| **Class-wise accuracy** | Accuracy for each individual class |
 
 ---
 
@@ -147,10 +200,16 @@ If you use this code in your research, please cite our paper:
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
 ## Contact
 
 For questions or issues, please open an issue on GitHub or contact the authors.
+
+<div align="center">
+
+**⭐ Star this repository if you find it helpful! ⭐**
+
+</div>
