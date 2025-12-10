@@ -51,6 +51,8 @@ def main():
         dataset_dir = os.path.join(dataset_path, dataset_name)
         if dataset_name == 'HS':
             required_files = ['Houston.mat', 'Houston_LR.mat', 'Houston_gt.mat']
+        elif dataset_name == 'MUUFL':
+            required_files = ['MUF_HSI.mat', 'MUF_LiDAR.mat', 'MUF_gt.mat']
         else:
             return
         if os.path.exists(dataset_dir) and all(os.path.exists(os.path.join(dataset_dir, f)) for f in required_files):
@@ -65,16 +67,17 @@ def main():
                 _download_file(url, filepath, verbose=True)
     dataset_root = os.path.join('C:', os.sep, 'code', 'dataset')
     model_dir = os.path.join('C:', os.sep, 'code', 'saved_models')
-    data_base_url = 'https://github.com/zwdmw/RL-FM1/releases/download/model/'
-    model_base_url = 'https://github.com/zwdmw/RL-FM1/releases/download/model/'
-    dataset_name = 'HS'
+   
+    dataset_name = 'MUUFL'#（HS,MUUFL）
+    data_base_url = 'https://github.com/zwdmw/RL-FM1/releases/download/model_MU/' if dataset_name == 'MUUFL' else 'https://github.com/zwdmw/RL-FM1/releases/download/model/'
+    model_base_url = 'https://github.com/zwdmw/RL-FM1/releases/download/model_MU/' if dataset_name == 'MUUFL' else 'https://github.com/zwdmw/RL-FM1/releases/download/model/'
     norm_type = 'scale'
     extractor_type = 'fully_connected'
     compute_device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    seed_value = 4547029
+    seed_value = 8973254 if dataset_name == 'MUUFL' else 4547029
     embed_size = 256
     hidden_size = 256
-    patch_dim = 7
+    patch_dim = 3 if dataset_name == 'MUUFL' else 7
     train_samples = 10
     layer_count = 1
     batch_count = 300
