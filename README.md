@@ -45,10 +45,10 @@ RL-FM is a reinforcement learning-based approach for multi-modal remote sensing 
 ## Features
 
 - ✅ **Multi-modal Fusion**: Seamlessly combines HSI and LiDAR data
-- ✅ **Reinforcement Learning**: Uses PPO (Proximal Policy Optimization) for optimal feature fusion
+- ✅ **Reinforcement Learning**: Uses CPPO for optimal feature fusion
 - ✅ **Flow Matching**: Advanced flow matching techniques for feature alignment
 - ✅ **Multiple Datasets**: Supports Houston (HS) and MUUFL datasets
-- ✅ **Auto Download**: Automatic dataset and model download on first run
+- ✅ **Auto Download**: Automatic data download on first run
 - ✅ **Easy Configuration**: Simple configuration via `main.py`
 
 ---
